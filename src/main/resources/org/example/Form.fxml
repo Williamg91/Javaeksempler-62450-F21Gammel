@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Rundhedsplatformen" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.FormController" xmlns="http://javafx.com/javafx/15.0.1">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="knappen" onAction="#trykPaaKnap" layoutX="529.0" layoutY="331.0" mnemonicParsing="false" text="Sig hej!" />
+            <TextField fx:id="textField" layoutX="209.0" layoutY="93.0" />
+            <Label layoutX="86.0" layoutY="98.0" text="Hvad hedder du? " />
+            <Label fx:id="hilsen" layoutX="183.0" layoutY="156.0" />
+         </children></AnchorPane>
+  </content>
+</TitledPane>
