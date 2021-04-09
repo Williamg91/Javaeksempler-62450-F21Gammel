@@ -38,7 +38,7 @@ private Statement statement;
                 System.out.println(
                         "ID: "+ resultSet.getInt(+1) +" "+
                          "Name:"+ resultSet.getString(2)
-                        + resultSet.get
+                        + "resultSet.get"
                 );
 
 
