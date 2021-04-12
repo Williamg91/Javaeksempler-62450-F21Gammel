@@ -65,10 +65,10 @@ public class ConnectionSingleTon {
 
     public Connection connectToSQLITE(String filename) {
         String Driver = "jdbc:sqlite:";
-        String url = Driver + filename + ".db";
+        String url = Driver + filename + "";
 
         try {
-            conn = DriverManager.getConnection("jdbc:sqlite:identifier.sqlite");
+            conn = DriverManager.getConnection("jdbc:sqlite:sqlitefilnavn");
 
 
             if (conn != null) {
