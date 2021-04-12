@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="forbindelse" uuid="6f4642b7-c3df-44c0-8e8e-9683cf2bd702">
+    <data-source source="LOCAL" name="sqlitefilnavn" uuid="52eadf6a-a111-4f86-830e-2184e3f06b09">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/sqlitefilnavn</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/Undervisningseksempler/src/main/java/org/example/Gang10/sqlitefilnavn</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.34.0/sqlite-jdbc-3.34.0.jar</url>
         </library>
       </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="eksempel10" uuid="f4ed292a-40e0-4d8b-ae5c-6a5dc4b88f91">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <remarks>optagelse til studerende</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:eksempel10</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
 </project>
