@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.6195899772209568" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="441.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <TableView fx:id="datatableview" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="637.0">
+              <columns>
+                <TableColumn fx:id="idcolumn" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="value1column" prefWidth="75.0" text="Value1" />
+                  <TableColumn prefWidth="75.0" text="Value2" />
+                  <TableColumn prefWidth="75.0" text="Value3" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
