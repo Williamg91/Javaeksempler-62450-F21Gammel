@@ -13,21 +13,21 @@ public class Main {
 
 
         ConnectionDRYnSOC refined = new ConnectionDRYnSOC();
-       refined.getSQLITEConnection("hestestalden");
+       //refined.getSQLITEConnection("hestestalden");
 
-       Connection mysql = refined.getMYSQLConnection("client","hestehest","SundhedsteknologiDB");
-      Connection sqlite = refined.getSQLITEConnection("sqlitefilnavn");
+       Connection mysql = refined.getMYSQLConnection("guest","hestehest","sundhedsteknologidb");
+      //Connection sqlite = refined.getSQLITEConnection("sqlitefilnavn");
 
        UseDB dbuser = new UseDB(mysql);
 
-
-       for (int i=0;i<30;i++){
+/*
+      for (int i=0;i<30;i++){
 
            dbuser.insertMeasurementsIntoTable(3402,((int) (Math.random()*1000)) ) ;
        }//Connection c1 = singleTon.connectToSQLITE("sqlitefilnavn");
 
         dbuser.findAllMeasurementsFromPatient(0,21);
-
+*/
     }
 
 }

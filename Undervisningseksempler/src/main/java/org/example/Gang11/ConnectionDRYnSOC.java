@@ -3,6 +3,7 @@ package org.example.Gang11;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class ConnectionDRYnSOC {
 
@@ -28,6 +29,51 @@ public class ConnectionDRYnSOC {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
+
+        String createTable1 = "CREATE TABLE if not exists `Patients` (\n" +
+                "  `id` int NOT NULL AUTO_INCREMENT,\n" +
+                "  `name` text,\n" +
+                "  `alder` int DEFAULT NULL,\n" +
+                "  `ptID` varchar(11) NOT NULL,\n" +
+                "  `CPR` varchar(11) DEFAULT NULL,\n" +
+                "  PRIMARY KEY (`id`),\n" +
+                "  UNIQUE KEY `ptID_UNIQUE` (`ptID`)\n" +
+                ") ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+        String createTable2 = "CREATE TABLE if not exists `Measurements` (\n" +
+                "  `id` int NOT NULL AUTO_INCREMENT,\n" +
+                "  `appid` int DEFAULT NULL,\n" +
+                "  `value1` double DEFAULT NULL,\n" +
+                "  `value2` double DEFAULT NULL,\n" +
+                "  `value3` double DEFAULT NULL,\n" +
+                "  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,\n" +
+                "  `ptID` varchar(11) NOT NULL,\n" +
+                "  PRIMARY KEY (`id`),\n" +
+                "  UNIQUE KEY `ptID_UNIQUE` (`ptID`)\n" +
+                ") ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+        String createTable3 = "CREATE TABLE `Appointments` (\n" +
+                "  `id` int NOT NULL AUTO_INCREMENT,\n" +
+                "  `dato` datetime DEFAULT CURRENT_TIMESTAMP,\n" +
+                "  `ptID` varchar(11) DEFAULT NULL,\n" +
+                "  PRIMARY KEY (`id`),\n" +
+                "  UNIQUE KEY `ptID_UNIQUE` (`ptID`),\n" +
+                "  CONSTRAINT `personID` FOREIGN KEY (`ptID`) REFERENCES `Patients` (`ptID`)\n" +
+                ") ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+        Statement statement= null;
+        try {
+            statement = connection.createStatement();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        try {
+            statement.executeQuery(createTable1);
+            statement.executeQuery(createTable2);
+            statement.executeQuery(createTable3);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+
         return connection;
     }
 
@@ -42,6 +88,39 @@ public class ConnectionDRYnSOC {
             if (connection != null) {
                 System.out.println("Connected to MYSQL Schema:"+Schema);
             }
+
+            String createTable1 = "CREATE TABLE if not exists `Patients` (\n" +
+                    "  `id` int NOT NULL AUTO_INCREMENT,\n" +
+                    "  `name` text,\n" +
+                    "  `alder` int DEFAULT NULL,\n" +
+                    "  `ptID` varchar(11) NOT NULL,\n" +
+                    "  `CPR` varchar(11) DEFAULT NULL,\n" +
+                    "  PRIMARY KEY (`id`),\n" +
+                    "  UNIQUE KEY `ptID_UNIQUE` (`ptID`)\n" +
+                    ") ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+            String createTable2 = "CREATE TABLE if not exists `Measurements` (\n" +
+                    "  `id` int NOT NULL AUTO_INCREMENT,\n" +
+                    "  `appid` int DEFAULT NULL,\n" +
+                    "  `value1` double DEFAULT NULL,\n" +
+                    "  `value2` double DEFAULT NULL,\n" +
+                    "  `value3` double DEFAULT NULL,\n" +
+                    "  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,\n" +
+                    "  `ptID` varchar(11) NOT NULL,\n" +
+                    "  PRIMARY KEY (`id`),\n" +
+                    "  UNIQUE KEY `ptID_UNIQUE` (`ptID`)\n" +
+                    ") ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+            String createTable3 = "CREATE TABLE if not exists `Appointments` (\n" +
+                    "  `id` int NOT NULL AUTO_INCREMENT,\n" +
+                    "  `dato` datetime DEFAULT CURRENT_TIMESTAMP,\n" +
+                    "  `ptID` varchar(11) DEFAULT NULL,\n" +
+                    "  PRIMARY KEY (`id`),\n" +
+                    "  UNIQUE KEY `ptID_UNIQUE` (`ptID`),\n" +
+                    "  CONSTRAINT `personID` FOREIGN KEY (`ptID`) REFERENCES `Patients` (`ptID`)\n" +
+                    ") ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;";
+            Statement statement= connection.createStatement();
+            statement.execute(createTable1);
+            statement.execute(createTable2);
+            statement.execute(createTable3);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } catch (ClassNotFoundException e) {
