@@ -1,8 +1,6 @@
-package org.example.Gang10;
+package org.example.Gang11;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class UseDB {
 
