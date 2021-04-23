@@ -1,9 +1,7 @@
-package org.example.Gang11;
+package org.example.Database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+
 
 public class ConnectionDRYnSOC {
 

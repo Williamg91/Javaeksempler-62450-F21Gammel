@@ -4,7 +4,12 @@ import java.sql.*;
 
 public class ConnectionSingleTon {
     private String url, adresse, user, password;
-//needed for a MYSQL Workbench setup
+
+    public Connection getConn() {
+        return conn;
+    }
+
+    //needed for a MYSQL Workbench setup
     private Connection conn = null;
     private ResultSet resultSet;
     private Statement statement;
