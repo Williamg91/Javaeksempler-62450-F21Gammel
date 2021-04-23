@@ -1,6 +1,7 @@
 package org.example.Gang11;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class UseDB {
 
@@ -55,7 +56,7 @@ public class UseDB {
         }
 
     }
-
+/*
     public void findAllMeasurementsFromPatient(int appointmentID,int patientID){
        // ArrayList liste = new ArrayList();
         //placeholder til værdier, som kan returneres.
@@ -87,6 +88,42 @@ public class UseDB {
         }
 
        //return liste;
+    }
+
+ */
+    public ArrayList<dataObject> findAllMeasurementsFromPatient(int appointmentID, int patientID){
+        dataObject dataObject= new dataObject();
+         ArrayList liste = new ArrayList();
+        //placeholder til værdier, som kan returneres.
+
+        String SQL= "SELECT value1,value2,value3,ptID FROM Measurements where ptID="
+                +patientID+
+                ";";
+        try {
+
+            statement=connection.createStatement();
+            //lav en connection
+            //lav et statement
+            //erklær et resultSet for at være resultat af søgningen fra en SQL string
+            resultSet = statement.executeQuery(SQL);
+            while(resultSet.next()){
+                //Hvad skal vi have ud?
+                System.out.println(
+                        "id:"+resultSet.getInt(1) +"\n"+
+                                "value1:"+resultSet.getDouble(2) +"\n"+
+                                "value2:"+resultSet.getDouble("value2") +"\n"+
+                                "value3:"+resultSet.getDouble("value3") +"\n"+
+                                "patientid:"+resultSet.getInt("ptID") +"\n"
+
+                );
+                //more code
+
+
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return liste;
     }
 
 
