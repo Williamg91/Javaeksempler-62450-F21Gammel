@@ -62,7 +62,6 @@ public class UseDB {
         //placeholder til værdier, som kan returneres.
 
         String SQL= "SELECT value1,value2,value3,ptID FROM Measurements where ptID="
-
                 +patientID+
                 ";";
         try {
@@ -82,11 +81,9 @@ public class UseDB {
                         "patientid:"+resultSet.getInt("ptID") +"\n"
                 );
             }
-            connection.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
        //return liste;
     }
 

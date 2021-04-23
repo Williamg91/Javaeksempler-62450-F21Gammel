@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+            <Button layoutX="433.0" layoutY="82.0" mnemonicParsing="false" text="Run" textFill="#549765" />
+            <Pane layoutX="97.0" layoutY="109.0" prefHeight="246.0" prefWidth="502.0" style="-fx-background-color: #4414;">
+               <children>
+                  <Line endX="100.0" endY="-88.0" layoutX="43.0" layoutY="211.0" startX="-35.0" startY="-33.0" />
+                  <Line endX="147.0" endY="-73.0" layoutX="53.0" layoutY="221.0" startX="83.0" startY="-98.70709228515625" />
+                  <Line endX="188.0" endY="-108.0" layoutX="63.0" layoutY="231.0" startX="137.70709228515625" startY="-82.29290771484375" />
+                  <Line endX="178.0" endY="-118.0" layoutX="73.0" layoutY="241.0" startX="238.0" startY="-109.0" />
+                  <Text layoutX="438.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tid" />
+                  <Text layoutX="7.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperatur" />
+                  <Line endX="9.0" endY="175.0" layoutX="12.0" layoutY="60.0" startX="9.0" startY="-25.0" />
+                  <Line endX="-4.0" endY="160.0" layoutX="22.0" layoutY="70.0" startX="441.0" startY="160.0" />
+                  <Label fx:id="temperaturlabel" layoutX="342.0" layoutY="14.0" text="Temperatur:" />
+                  <Polyline fill="CHARTREUSE" layoutX="76.0" layoutY="125.0" points="92.0, 10.146453857421875, 59.29290771484375, -3.4141845703125, -24.0, 10.146453857421875, -54.5, -3.4141845703125" strokeType="INSIDE" />
+               </children>
+            </Pane>
+            <TextField layoutX="438.0" layoutY="21.0" promptText="Øvre grænse (C)" />
+            <TextField layoutX="438.0" layoutY="55.0" promptText="nedre grænse (C)" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
